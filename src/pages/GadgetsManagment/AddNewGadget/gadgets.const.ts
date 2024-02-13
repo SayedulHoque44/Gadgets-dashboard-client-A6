@@ -1,0 +1,20 @@
+export const exampleGadget = {
+  name: "Example Gadget",
+  imageUrl: "https://example.com/gadget.jpg",
+  price: 99.99,
+  quantity: 10,
+  releaseDate: "2022-01-01",
+  Brand: "Example Brand",
+  modelNumber: "ABC123",
+  Category: "Electronics",
+  operatingSystem: "Example OS",
+  connectivity: "Wireless",
+  powerSource: "Battery",
+  features: {
+    resolution: "1920x1080",
+    storagecapacity: "256GB",
+    screenSize: "15 inches",
+    weight: "2.5 lbs",
+    dimensions: "10 x 8 x 1 inches",
+  },
+};
