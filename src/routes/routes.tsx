@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
+import Checkout from "../pages/Checkout/Checkout";
 import GadgetsManagment from "../pages/GadgetsManagment/GadgetsManagment";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login";
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "SalesHistory",
         element: <SalesHistory />,
+      },
+      {
+        path: "Checkout",
+        element: <Checkout />,
       },
     ],
   },
