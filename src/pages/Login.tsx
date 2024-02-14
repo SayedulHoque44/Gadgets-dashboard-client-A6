@@ -28,7 +28,8 @@ const Login = () => {
       const user = verifyToken(res.data.token);
       dispatch(setUser({ user: user, token: res.data.token }));
       toast.success("Logged in", { id: toastId, duration: 2000 });
-      navigate(`/dashboard`);
+      window.location.href = `/dashboard`;
+      // navigate(`/dashboard`);
     } catch (err: any) {
       console.log(err);
       toast.error(err.data.message, { id: toastId, duration: 2000 });

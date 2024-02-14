@@ -8,6 +8,7 @@ import { RootState } from "../../store";
 export type TUser = {
   userId: string;
   name: string;
+  role: string;
 };
 
 const initialState = {
