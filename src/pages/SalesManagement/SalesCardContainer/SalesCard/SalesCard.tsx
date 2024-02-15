@@ -20,14 +20,6 @@ const SalesCard = ({ gadgets }: TSalesCardProp) => {
   const CartItems = useAppSelector(useShowCart);
 
   const [count, setCount] = useState(1);
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-
-  const salesInfo = {
-    productId: gadgets._id,
-    quantity: count,
-    buyerName: "",
-  };
 
   //
   const handleIncrese = () => {
@@ -97,15 +89,6 @@ const SalesCard = ({ gadgets }: TSalesCardProp) => {
           </button>
         </div>
       </div>
-      {/* modal */}
-      {/* {open && (
-        <SaleModal
-          open={open}
-          gadgets={gadgets}
-          setOpen={setOpen}
-          salesInfo={salesInfo}
-        />
-      )} */}
     </div>
   );
 };

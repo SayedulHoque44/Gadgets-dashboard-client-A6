@@ -1,4 +1,4 @@
-import { useState } from "react";
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { MdDelete } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import { toast } from "sonner";
@@ -16,8 +16,7 @@ const CartItemContainer = ({
   item: TCartItem;
   index: number;
 }) => {
-  const { name, price, id, quantity, stock, imageUrl } = item;
-  const [count, setCount] = useState(quantity);
+  const { price, quantity, stock, imageUrl } = item;
 
   const dispatch = useAppDispatch();
 

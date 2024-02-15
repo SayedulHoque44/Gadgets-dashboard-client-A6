@@ -45,7 +45,8 @@ const SideItems = () => {
     <Sider
       breakpoint="lg"
       collapsedWidth="0"
-      onCollapse={(collapsed, type) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      onCollapse={(_collapsed, _type) => {
         // console.log(collapsed, type);
       }}>
       <div className="demo-logo-vertical" />

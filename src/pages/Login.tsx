@@ -1,6 +1,6 @@
 import { Button, Row } from "antd";
 import { FieldValues } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import Form from "../components/Form/Form";
 import FormInput from "../components/Form/FormInput";
@@ -10,7 +10,6 @@ import { useAppDispatch } from "../redux/hooks";
 import { verifyToken } from "../utils/verifyToken";
 
 const Login = () => {
-  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const [login, { isLoading }] = useLoginMutation();
 
