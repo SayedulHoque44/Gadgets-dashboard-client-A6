@@ -1,9 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../store";
 
-type TCartItem = {
+export type TCartItem = {
+  name: string;
+  price: number;
   id: string;
   quantity: number;
+  stock: number;
+  imageUrl: string;
 };
 
 type TinitialState = {
@@ -20,14 +24,23 @@ const cartSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
       const newCart = action.payload;
-
-      state.CartItems = [...state.CartItems, newCart];
+      const otherCart = state.CartItems.filter(
+        (cart) => cart.id !== newCart.id
+      );
+      state.CartItems = [...otherCart, newCart];
+    },
+    deleteFromCart: (state, action) => {
+      const newCart = action.payload;
+      const otherCart = state.CartItems.filter(
+        (cart) => cart.id !== newCart.id
+      );
+      state.CartItems = [...otherCart];
     },
   },
 });
 
 //
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, deleteFromCart } = cartSlice.actions;
 
 //
 export default cartSlice.reducer;

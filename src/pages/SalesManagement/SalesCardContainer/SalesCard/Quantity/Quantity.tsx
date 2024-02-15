@@ -12,15 +12,15 @@ const Quantity = ({ count, handleIncrese, handleDecrese }: TQuantityProps) => {
       <span
         onClick={handleDecrese}
         className="p-2 font-semibold  cursor-pointer">
-        <FaMinus size={20} />
+        <FaMinus />
       </span>
-      <span className="py-1 px-4 border-2 font-bold text-lg border-gray-400">
+      <span className="py-1 px-4 border-2 font-bold  border-gray-400">
         {count}
       </span>
       <span
         onClick={handleIncrese}
         className="p-2 font-semibold  cursor-pointer">
-        <FaPlus size={20} />
+        <FaPlus />
       </span>
     </div>
   );

@@ -15,6 +15,7 @@ type TSalesCardProp = {
 const SalesCard = ({ gadgets }: TSalesCardProp) => {
   const { name, Category, imageUrl, modelNumber, price, quantity, _id } =
     gadgets;
+
   const dispatch = useAppDispatch();
   const CartItems = useAppSelector(useShowCart);
 
@@ -47,7 +48,9 @@ const SalesCard = ({ gadgets }: TSalesCardProp) => {
   //
   const handleAddToCart = (id: string) => {
     toast.success(`${name} added to Cart!`);
-    dispatch(addToCart({ id, quantity: count }));
+    dispatch(
+      addToCart({ id, quantity: count, stock: quantity, name, price, imageUrl })
+    );
   };
 
   return (
@@ -81,7 +84,7 @@ const SalesCard = ({ gadgets }: TSalesCardProp) => {
           handleIncrese={handleIncrese}
           handleDecrese={handleDecrese}
         />
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between mt-5">
           <span className="text-3xl font-bold text-gray-900 dark:text-white">
             ${price}
           </span>
