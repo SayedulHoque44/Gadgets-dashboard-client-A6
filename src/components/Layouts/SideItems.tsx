@@ -2,11 +2,18 @@ import { Layout, Menu } from "antd";
 import { IoIosLogOut } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 import { logout } from "../../redux/features/Auth/authSlice";
+import { deleteFromCartAll } from "../../redux/features/Cart/CartSlice";
 import { useAppDispatch } from "../../redux/hooks";
 const { Sider } = Layout;
 
 const SideItems = () => {
   const dispatch = useAppDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
+    dispatch(deleteFromCartAll());
+  };
+
   const items = [
     {
       key: "Gadgets Management",
@@ -27,7 +34,7 @@ const SideItems = () => {
       label: (
         <span
           className="flex gap-2 items-center font-semibold text-red-400"
-          onClick={() => dispatch(logout())}>
+          onClick={handleLogout}>
           LogOut
           <IoIosLogOut size={20} />
         </span>
