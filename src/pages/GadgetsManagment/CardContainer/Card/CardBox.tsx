@@ -65,11 +65,13 @@ const CardBox = ({ gadGets, selectMulti, setSelectMulti }: TCardBox) => {
           className="checkbox checkbox-primary absolute top-3 right-3"
         />
         <div>
-          <img
-            className="rounded-t-lg h-[400px] object-cover"
-            src={imageUrl ? imageUrl : dummyImage}
-            alt="gadgets"
-          />
+          <div className="flex justify-center">
+            <img
+              className="rounded-t-lg h-[400px] object-cover"
+              src={imageUrl ? imageUrl : dummyImage}
+              alt="gadgets"
+            />
+          </div>
 
           <div className="p-5 flex flex-col space-y-3 text-lg">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">

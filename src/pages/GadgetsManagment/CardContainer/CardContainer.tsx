@@ -12,7 +12,6 @@ type TCardContainerProsp = {
 
 const CardContainer = ({ allGadgets, isLoading }: TCardContainerProsp) => {
   const [selectMulti, setSelectMulti] = useState([]);
-  console.log(allGadgets);
   const [deleteMultiGadgets, { isLoading: isMultiDeleteLoading }] =
     useDeleteMultiGadgetsMutation();
 

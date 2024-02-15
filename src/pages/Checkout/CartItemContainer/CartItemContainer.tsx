@@ -9,7 +9,13 @@ import {
 } from "../../../redux/features/Cart/CartSlice";
 import { useAppDispatch } from "../../../redux/hooks";
 import Quantity from "../../SalesManagement/SalesCardContainer/SalesCard/Quantity/Quantity";
-const CartItemContainer = ({ item }: { item: TCartItem }) => {
+const CartItemContainer = ({
+  item,
+  index,
+}: {
+  item: TCartItem;
+  index: number;
+}) => {
   const { name, price, id, quantity, stock, imageUrl } = item;
   const [count, setCount] = useState(quantity);
 
@@ -33,13 +39,9 @@ const CartItemContainer = ({ item }: { item: TCartItem }) => {
   return (
     <div className="border-b-2 border-gray-300 py-5 grid grid-cols-3 items-center">
       <div className="flex items-center gap-3">
-        <span>1</span>
+        <span>{index + 1}</span>
         <div>
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPle153BpcEAw3jtJIij6hwXiuyhFs8asI0w&usqp=CAU"
-            className="w-16"
-            alt=""
-          />
+          <img src={imageUrl} className="w-16" alt="" />
         </div>
         <div>
           <h3>Name</h3>

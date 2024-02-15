@@ -6,6 +6,7 @@ import Form from "../../components/Form/Form";
 import FormInput from "../../components/Form/FormInput";
 import {
   deleteFromCart,
+  deleteFromCartAll,
   useShowCart,
 } from "../../redux/features/Cart/CartSlice";
 import { useAddSalesMutation } from "../../redux/features/gadgetsManagment/gadGetsManagmentApi";
@@ -52,7 +53,7 @@ const Checkout = () => {
     return (
       <div className="lg:p-20">
         <div className="p-10 bg-gray-200 text-center space-y-3 text-2xl">
-          <h1 className="font-semibold">There are Not Cart!</h1>
+          <h1 className="font-semibold">There are No Cart!</h1>
           <p>Let's Shopping!</p>
           <Link className="mt-5 inline-block" to={"/dashboard/SalesManagement"}>
             <Button>Sells!</Button>
@@ -66,20 +67,29 @@ const Checkout = () => {
     <div className="lg:p-20">
       <div className="grid xl:grid-cols-5 border-2">
         <div className=" bg-gray-200  font-semibold  p-10 xl:col-span-3 text-gray-800">
-          <h2 className="text-xl mb-10">Order Summary</h2>
+          <div className="flex justify-between">
+            <h2 className="text-xl mb-10">Order Summary</h2>
+            {CartItems.length !== 0 && (
+              <span
+                onClick={() => dispatch(deleteFromCartAll())}
+                className="font-bold text-red-500 cursor-pointer">
+                Remove All
+              </span>
+            )}
+          </div>
           <div>
             <div className="border-y-2 border-gray-300 py-5 grid grid-cols-3 text-[1rem]">
               <span>Product Name</span>
               <span>Quantity</span>
               <span>Price</span>
             </div>
-            {CartItems.map((item) => (
-              <CartItemContainer key={item.id} item={item} />
+            {CartItems.map((item, index: number) => (
+              <CartItemContainer index={index} key={index} item={item} />
             ))}
           </div>
           <div className="py-3 space-y-2">
             <div className="flex justify-between font-semibold">
-              <span>SubTotal</span>
+              <span>Grand Total</span>
               <span>
                 $
                 {CartItems.reduce(
