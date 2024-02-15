@@ -7,6 +7,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import SalesHistory from "../pages/SalesHistory/SalesHistory";
 import SalesManagement from "../pages/SalesManagement/SalesManagement";
+import SucessCartPage from "../pages/SuccessCartPage/SucessCartPage";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "Checkout",
         element: <Checkout />,
+      },
+      {
+        path: "SuccessCartPage",
+        element: <SucessCartPage />,
       },
     ],
   },

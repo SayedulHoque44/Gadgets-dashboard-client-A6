@@ -1,6 +1,6 @@
 import { Button } from "antd";
 import { FieldValues } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import Form from "../../components/Form/Form";
 import FormInput from "../../components/Form/FormInput";
@@ -17,6 +17,7 @@ const Checkout = () => {
   const CartItems = useAppSelector(useShowCart);
   const [addSales, { isLoading }] = useAddSalesMutation();
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const onSubmit = async (data: FieldValues) => {
     // const salesInfos = {
     //   productId,
@@ -34,19 +35,11 @@ const Checkout = () => {
         const res = await addSales(salesInfos).unwrap();
         toast.success(res.message);
         dispatch(deleteFromCart(item));
+        navigate("/dashboard/SuccessCartPage");
       } catch (error: any) {
         toast.error(error.data.message);
       }
     });
-
-    return;
-    // try {
-    //   const res = await addSales(salesInfos).unwrap();
-    //   toast.success(res.message);
-
-    // } catch (error: any) {
-    //   toast.error(error.data.message);
-    // }
   };
 
   if (CartItems.length === 0) {
