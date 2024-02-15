@@ -1,6 +1,6 @@
-## [GadgetDashboard-Client-path-1](https://lvl2-assignment5-client.web.app/)
+## [GadgetDashboard-Client-path-1](https://ph-lvl2-ass6.web.app/)
 
-## [GadgetDashboard-Server-path-1](https://assignment-5-ph-lvl2-server.vercel.app/)
+## [GadgetDashboard-Server-path-1](https://ph-lvl2-ass6-server.vercel.app/)
 
 ## Developoment
 
