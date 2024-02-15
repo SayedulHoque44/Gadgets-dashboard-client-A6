@@ -30,7 +30,6 @@ const baseQueryCheckingStatus: BaseQueryFn<
   const result = await baseQuery(args, api, extraOptions);
 
   if (result?.error?.status === 401) {
-    console.log("logout");
     api.dispatch(logout());
   }
 
