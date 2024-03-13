@@ -2,6 +2,13 @@
 
 ## [GadgetDashboard-Server-path-1](https://ph-lvl2-ass6-server.vercel.app/)
 
+## Access To Dashboard - Login
+
+- Admin/Manager - Email:`sayed@gmail.com` - pass `1234`
+- user1 - Email:`almun@gmail.com` - pass `1234`
+- user2 - Email:`user2@gmail.com` - pass `1234`
+- user3 - Email:`user2@gmail.com` - pass `1234`
+
 ## Developoment
 
 - `npm run dev` -> for dev
