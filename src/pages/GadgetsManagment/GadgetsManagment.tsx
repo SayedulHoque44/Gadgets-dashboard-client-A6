@@ -27,7 +27,7 @@ const GadgetsManagment = () => {
     setQuery({});
   };
 
-  const [value, setValue] = useState<number[]>([20, 37]);
+  const [value, setValue] = useState<number[]>([20, 100]);
 
   const handlePriceRange = (_event: Event, newValue: number | number[]) => {
     setValue(newValue as number[]);

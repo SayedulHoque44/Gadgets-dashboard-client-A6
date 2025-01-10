@@ -39,13 +39,17 @@ const Login = () => {
     <Row justify="center" align="middle" style={{ height: "100vh" }}>
       <div className="shadow-lg p-20">
         <h1 className="text-center text-xl font-semibold">Login Please!</h1>
-        <Form onSubmit={onSubmit}>
+        <Form
+          onSubmit={onSubmit}
+          defaultValues={{ email: "sayed@gmail.com", password: "1234" }}
+        >
           <FormInput type="text" name="email" label="email" />
           <FormInput type="text" name="password" label="Password" />
           <Button
             disabled={isLoading}
             className="text-white disabled:text-white"
-            htmlType="submit">
+            htmlType="submit"
+          >
             Login
           </Button>
         </Form>

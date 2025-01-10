@@ -5,7 +5,7 @@ export const exampleGadget = {
   quantity: 10,
   releaseDate: "2022-01-01",
   Brand: "Example Brand",
-  modelNumber: "ABC123",
+  modelNumber: `id-${Date.now()}-${Math.floor(Math.random() * 10000)}`,
   Category: "Electronics",
   operatingSystem: "Example OS",
   connectivity: "Wireless",
